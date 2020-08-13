@@ -7,6 +7,6 @@ J'ai rencontré quelques souci de compatibilités de version lorsque j'ai télé
 - J'ai donc dû mettre à jour certains modules.
 - J'ai aussi très légèrement modifié les routes en rajoutant { withCredentials: true } ce qui permet d'envoyer les cookies au backend :
 
-![screenshot des modifications](https://github.com/RomainSire/OC-P6-SoPekocko-frontend/screenshot.png "screenshot des modifications")
+![screenshot des modifications](https://github.com/RomainSire/OC-P6-SoPekocko-frontend/blob/master/screenshot.png "screenshot des modifications")
 
 > **Consulter le [repository du backend](https://github.com/RomainSire/OC-P6-SoPekocko) ou tout est mieux expliqué**

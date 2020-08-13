@@ -87,7 +87,7 @@ export class SaucesService {
               private auth: AuthService) {}
 
   getSauces() {
-    this.http.get('http://localhost:3000/api/sauces').subscribe(
+    this.http.get('http://localhost:3000/api/sauces', { withCredentials: true }).subscribe(
       (sauces: Sauce[]) => {
         this.sauces$.next(sauces);
       },
@@ -100,7 +100,7 @@ export class SaucesService {
 
   getSauceById(id: string) {
     return new Promise((resolve, reject) => {
-      this.http.get('http://localhost:3000/api/sauces/' + id).subscribe(
+      this.http.get('http://localhost:3000/api/sauces/' + id, { withCredentials: true }).subscribe(
         (sauce: Sauce) => {
           resolve(sauce);
         },
@@ -118,7 +118,7 @@ export class SaucesService {
         {
           userId: this.auth.getUserId(),
           like: like ? 1 : 0
-        })
+        }, { withCredentials: true })
         .subscribe(
           (response: { message: string }) => {
             resolve(like);
@@ -137,7 +137,7 @@ export class SaucesService {
         {
           userId: this.auth.getUserId(),
           like: dislike ? -1 : 0
-        })
+        }, { withCredentials: true })
         .subscribe(
           (response: { message: string }) => {
             resolve(dislike);
@@ -154,7 +154,7 @@ export class SaucesService {
       const formData = new FormData();
       formData.append('sauce', JSON.stringify(sauce));
       formData.append('image', image);
-      this.http.post('http://localhost:3000/api/sauces', formData).subscribe(
+      this.http.post('http://localhost:3000/api/sauces', formData, { withCredentials: true }).subscribe(
         (response: { message: string }) => {
           resolve(response);
         },
@@ -168,7 +168,7 @@ export class SaucesService {
   modifySauce(id: string, sauce: Sauce, image: string | File) {
     return new Promise((resolve, reject) => {
       if (typeof image === 'string') {
-        this.http.put('http://localhost:3000/api/sauces/' + id, sauce).subscribe(
+        this.http.put('http://localhost:3000/api/sauces/' + id, sauce, { withCredentials: true }).subscribe(
           (response: { message: string }) => {
             resolve(response);
           },
@@ -180,7 +180,7 @@ export class SaucesService {
         const formData = new FormData();
         formData.append('sauce', JSON.stringify(sauce));
         formData.append('image', image);
-        this.http.put('http://localhost:3000/api/sauces/' + id, formData).subscribe(
+        this.http.put('http://localhost:3000/api/sauces/' + id, formData, { withCredentials: true }).subscribe(
           (response: { message: string }) => {
             resolve(response);
           },
@@ -194,7 +194,7 @@ export class SaucesService {
 
   deleteSauce(id: string) {
     return new Promise((resolve, reject) => {
-      this.http.delete('http://localhost:3000/api/sauces/' + id).subscribe(
+      this.http.delete('http://localhost:3000/api/sauces/' + id, { withCredentials: true }).subscribe(
         (response: { message: string }) => {
           resolve(response);
         },

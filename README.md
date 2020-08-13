@@ -1,7 +1,12 @@
-## Piquante
+# OpenClassrooms P6 - Frontend SoPekocko "Piquante"
 
-Le projet a été généré avec [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
+Voici le frontend de l'application "Piquante" fourni par OpenClassrooms pour le projet 6 de la [formation de développeur web](https://openclassrooms.com/fr/paths/185-developpeur-web)  
 
-## Development server
+J'ai rencontré quelques souci de compatibilités de version lorsque j'ai téléchargé la [version originale du frontend](https://github.com/OpenClassrooms-Student-Center/dwj-projet6) fournée par OpenClassrooms.  
 
-Démarrer `ng serve` pour avoir accès au serveur de développement. Rendez-vous sur `http://localhost:4200/`. L'application va se recharger automatiquement si vous modifiez un fichier source.
+- J'ai donc dû mettre à jour certains modules.
+- J'ai aussi très légèrement modifié les routes en rajoutant { withCredentials: true } ce qui permet d'envoyer les cookies au backend :
+
+![screenshot des modifications](https://github.com/RomainSire/OC-P6-SoPekocko-frontend/screenshot.png "screenshot des modifications")
+
+> **Consulter le [repository du backend](https://github.com/RomainSire/OC-P6-SoPekocko) ou tout est mieux expliqué**
